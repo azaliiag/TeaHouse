@@ -1,0 +1,42 @@
+﻿<Window x:Class="CourseReady.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CourseReady"
+        mc:Ignorable="d"
+        Title="Вход в систему" Height="450" Width="800" MaxHeight="450" MaxWidth="800" MinHeight="450" MinWidth="800" Icon="Resources/logo2.png">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" Margin="20" FontFamily="Nexa Bold" Foreground="#FF5E725D">Добро пожаловать в дом чая!</TextBlock>
+            <Image Source="Resources/logo2.png" Width="150" Height="111" VerticalAlignment="Bottom" Grid.Column="0" Grid.Row="0"></Image>
+        </Grid>
+        <Grid Grid.Column="1" Background="#FFE9FF9E">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="30">Авторизация</TextBlock>
+            <TextBlock FontSize="20" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="15">Логин</TextBlock>
+            <TextBlock FontSize="20" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="15">Пароль</TextBlock>
+            <TextBox x:Name="LoginTextBox"  Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="15"></TextBox>
+            <TextBox x:Name="PasswordTextBox" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="15"></TextBox>
+            <Button x:Name="MoveToReg" Click="MoveToReg_Click" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="15" Content="Окно регистрации" FontSize="14"></Button>
+            <Button x:Name="AuthButton" Click="AuthButton_Click" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="15" FontSize="14">Войти</Button>
+        </Grid>
+    </Grid>
+</Window>

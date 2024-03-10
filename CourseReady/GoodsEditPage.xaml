@@ -1,0 +1,128 @@
+﻿<Page x:Class="CourseReady.GoodsEditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CourseReady"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+     Title="GoodsEditPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                
+            </Grid>
+            <ListView Width="370" HorizontalAlignment="Left" x:Name="ListGoodsEdit" Grid.Row="0" Margin="10,10,10,10" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Hidden" MouseDoubleClick="ListGoodsEdit_MouseDoubleClick">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel>
+                        </WrapPanel>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="1" BorderBrush="Orange" Width="172" Height="245">
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="6*"></RowDefinition>
+                                    <RowDefinition Height="2*"></RowDefinition>
+                                    <RowDefinition Height="2*"></RowDefinition>
+                                    <RowDefinition Height="2*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Row="0" Grid.ColumnSpan="2" Source="{Binding Фото}" Width="150" Height="120"></Image>
+                                <Label Grid.Row="1" HorizontalAlignment="Center" Grid.ColumnSpan="2" Content="{Binding Название}" FontSize="16" VerticalAlignment="Top" ></Label>
+                                <Label Grid.Row="2" HorizontalAlignment="Center" Grid.ColumnSpan="2" Content="{Binding Категория}" FontSize="12" VerticalAlignment="Top" ></Label>
+                                <Label Grid.Row="3" HorizontalAlignment="Center" Grid.ColumnSpan="2" Content="{Binding Стоимость}" FontSize="12" VerticalAlignment="Top"></Label>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid Grid.Column="1" Background="#FFFFC500">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="3">Редактирование</TextBlock>
+                <!--<Button Grid.Row="3" Height="40" Width="390">Оплатить картой</Button>
+                <Button Grid.Row="4" Height="40" Width="390">Оплатить при получении</Button>-->
+                <Grid Grid.Row="2" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center">Категория</TextBlock>
+                    <TextBox x:Name="CatEdit" Grid.Column="1"></TextBox>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center">Название</TextBlock>
+                    <TextBox x:Name="NameEdit" Grid.Column="1"></TextBox>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center">Стоимость</TextBlock>
+                    <TextBox x:Name="PriceEdit" Grid.Column="1"></TextBox>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center">Количество</TextBlock>
+                    <TextBox x:Name="QuantityEdit" Grid.Column="1"></TextBox>
+                </Grid>
+                <Grid Grid.Row="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button  x:Name="PhotoEdit" Grid.Column="0" Height="35" Width="120" Click="PhotoEdit_Click">Изменить фото</Button>
+                    <Image x:Name="Photo" Grid.Column="1" ></Image>
+                  
+                </Grid>
+                <Grid Grid.Row="6">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="AddButton" Click="AddButton_Click" Height="35" Width="120">Добавить</Button>
+                    <Button x:Name="EditButton" Click="EditButton_Click" Grid.Column="1" Height="35" Width="120">Изменить</Button>
+                    <Button x:Name="DeleteButton" Click="DeleteButton_Click"  Grid.Column="2" Height="35" Width="120" >Удалить</Button>
+
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Background="#FFE9FF9E" Grid.Row="1">
+        </Grid>
+    </Grid>
+</Page>
